@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sES-0D-PRJ">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Secundomer View Controller-->
+        <scene sceneID="KOg-hd-4XI">
+            <objects>
+                <viewController id="sES-0D-PRJ" customClass="SecundomerViewController" customModule="SecundMer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cr2-nO-BGV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftc-4J-AJp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="82"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0h-Uc-OSv">
+                                <rect key="frame" x="162.66666666666666" y="49" width="50" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4Bc-36-uFa"/>
+                                    <constraint firstAttribute="height" constant="34" id="IQl-RY-gzp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jrU-fr-0EW"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q0h-Uc-OSv" firstAttribute="top" secondItem="jrU-fr-0EW" secondAttribute="top" constant="5" id="0CA-mY-y8X"/>
+                            <constraint firstAttribute="trailing" secondItem="ftc-4J-AJp" secondAttribute="trailing" id="6M6-ae-TT0"/>
+                            <constraint firstItem="ftc-4J-AJp" firstAttribute="top" secondItem="cr2-nO-BGV" secondAttribute="top" id="9zy-Gf-gSc"/>
+                            <constraint firstItem="ftc-4J-AJp" firstAttribute="leading" secondItem="cr2-nO-BGV" secondAttribute="leading" id="HgW-XJ-2QW"/>
+                            <constraint firstAttribute="bottom" secondItem="ftc-4J-AJp" secondAttribute="bottom" id="Ptd-0K-JE4"/>
+                            <constraint firstItem="Q0h-Uc-OSv" firstAttribute="centerX" secondItem="jrU-fr-0EW" secondAttribute="centerX" id="YeC-M4-w4H"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Xch-w1-nWg" appends="YES" id="GtV-H2-CtG"/>
+                            <outletCollection property="gestureRecognizers" destination="i1S-Ti-QMd" appends="YES" id="JQd-ar-veZ"/>
+                            <outletCollection property="gestureRecognizers" destination="XKW-w7-GUb" appends="YES" id="azV-q6-xso"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="longRecoginezer" destination="i1S-Ti-QMd" id="B6k-lj-JxP"/>
+                        <outlet property="milliSecundLabel" destination="Q0h-Uc-OSv" id="B9T-ZK-YS9"/>
+                        <outlet property="tapCustomRecoginazer" destination="XKW-w7-GUb" id="A0p-dD-U1s"/>
+                        <outlet property="timeLabel" destination="ftc-4J-AJp" id="xh8-Mh-XZ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w3A-MK-j3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="i1S-Ti-QMd">
+                    <connections>
+                        <action selector="longPress:" destination="sES-0D-PRJ" id="54y-NM-Qag"/>
+                        <outlet property="delegate" destination="cr2-nO-BGV" id="gu4-G6-rha"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="Xch-w1-nWg">
+                    <connections>
+                        <action selector="startPause:" destination="sES-0D-PRJ" id="JSp-Ba-fqv"/>
+                        <outlet property="delegate" destination="cr2-nO-BGV" id="jov-hx-0e7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XKW-w7-GUb">
+                    <connections>
+                        <action selector="doubleRecoginazer:" destination="sES-0D-PRJ" id="vhM-zP-N34"/>
+                        <outlet property="delegate" destination="cr2-nO-BGV" id="Aa0-rJ-NdU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1220" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PSO-Dr-B2E">
+            <objects>
+                <viewController storyboardIdentifier="setting" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iGf-n4-jRF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tSv-kB-V7H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfN-fH-dX0">
+                                <rect key="frame" x="16" y="69" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="O03-Sm-vgg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="sES-0D-PRJ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="IDH-3g-Jia"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3yF-VS-FgM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3yF-VS-FgM" firstAttribute="trailing" secondItem="ZfN-fH-dX0" secondAttribute="trailing" constant="16" id="Vww-Lw-c65"/>
+                            <constraint firstItem="ZfN-fH-dX0" firstAttribute="leading" secondItem="3yF-VS-FgM" secondAttribute="leading" constant="16" id="dzK-GA-uIu"/>
+                            <constraint firstItem="ZfN-fH-dX0" firstAttribute="top" secondItem="3yF-VS-FgM" secondAttribute="top" constant="25" id="eM1-vZ-n17"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uuk-ZB-2Cm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2021.5999999999999" y="83.497536945812811"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
