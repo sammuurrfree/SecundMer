@@ -15,6 +15,8 @@
 		4B62E7FB272142820039C722 /* TimeCheker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62E7FA272142820039C722 /* TimeCheker.swift */; };
 		4B62E7FE27215B860039C722 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62E7FD27215B860039C722 /* UILabelExtension.swift */; };
 		4B62E803272176F10039C722 /* SecundomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62E802272176F10039C722 /* SecundomerViewController.swift */; };
+		4B8886092726CE82009A67DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8886082726CE82009A67DB /* SettingsViewController.swift */; };
+		4B88860B2726CF82009A67DB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88860A2726CF82009A67DB /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4B62E7FA272142820039C722 /* TimeCheker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCheker.swift; sourceTree = "<group>"; };
 		4B62E7FD27215B860039C722 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		4B62E802272176F10039C722 /* SecundomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecundomerViewController.swift; sourceTree = "<group>"; };
+		4B8886082726CE82009A67DB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4B88860A2726CF82009A67DB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			children = (
 				4B5B254C27204C07000DB2A1 /* Assets.xcassets */,
 				4B62E7FA272142820039C722 /* TimeCheker.swift */,
+				4B88860A2726CF82009A67DB /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				4B62E802272176F10039C722 /* SecundomerViewController.swift */,
+				4B8886082726CE82009A67DB /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,7 +194,9 @@
 				4B62E7FE27215B860039C722 /* UILabelExtension.swift in Sources */,
 				4B62E803272176F10039C722 /* SecundomerViewController.swift in Sources */,
 				4B5B254427204C05000DB2A1 /* AppDelegate.swift in Sources */,
+				4B88860B2726CF82009A67DB /* Settings.swift in Sources */,
 				4B5B254627204C05000DB2A1 /* SceneDelegate.swift in Sources */,
+				4B8886092726CE82009A67DB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

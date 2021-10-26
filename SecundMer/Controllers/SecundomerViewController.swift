@@ -9,25 +9,45 @@ import UIKit
 
 class SecundomerViewController: UIViewController {
 
+    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var milliSecundLabel: UILabel!
     @IBOutlet var longRecoginezer: UILongPressGestureRecognizer!
     @IBOutlet var tapCustomRecoginazer: UITapGestureRecognizer!
     
+    
+    var color: [UIColor] = [.black, .blue, .brown, .cyan, .darkGray, .gray, .green, .lightGray, .lightText, .magenta, .orange, .purple, .red, .systemPurple, .systemPink, .systemYellow]
     var isPause = true
     var isHourHide = false
     var timer = Timer()
     var timeCheker = TaimCheker.main
+    let settings = Settings.main
+    var animateDurattion = 0.5
+    var textSize = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         longRecoginezer.minimumPressDuration = 1.5
         tapCustomRecoginazer.numberOfTapsRequired = 4
+        
+        milliSecundLabel.isHidden = !settings.showMilliseconds
+        view.backgroundColor = settings.backroundColor
+        timeLabel.textColor = settings.foregroundColor
+        milliSecundLabel.textColor = settings.foregroundColor
+        for i in 0..<color.count - 1 {
+            if color[i] == settings.backroundColor{
+                color.remove(at: i)
+            }
+        }
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         timeLabel.getTextSizeForScreen()
+        
+        updateLabels()
     }
 
 
@@ -35,7 +55,22 @@ class SecundomerViewController: UIViewController {
         timeCheker.time += 0.01
         timeCheker.chekTime()
         
+        if settings.animedetText{
+            textAnimate()
+        }
+        
         updateLabels()
+    }
+    
+    func textAnimate(){
+        animateDurattion -= 0.01
+        
+        if animateDurattion <= 0 {
+            timeLabel.textColor = color.randomElement()
+            milliSecundLabel.textColor = color.randomElement()
+            animateDurattion = 0.5
+        }
+
     }
     
     
@@ -44,7 +79,7 @@ class SecundomerViewController: UIViewController {
         milliSecundLabel.text = String(Int(timeCheker.time * 100))
     
 
-        if timeCheker.hour > 0{
+        if timeCheker.hour > 0 || settings.showHour{
             if timeCheker.secund < 10{
                 if timeCheker.minute < 10{
                     if timeCheker.hour < 10{
